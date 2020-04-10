@@ -1,0 +1,129 @@
+* {
+  animation: fade_in 2s;
+  cursor: none;
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  font-family: 'Megrim', cursive;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+  justify-content: space-around;
+  cursor: none;
+  margin-top: 15vh;
+  font-weight: bolder;
+  font-size: 15px;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+#main_heading {
+	text-align: center;
+}
+.app {
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: auto;
+  margin-top: 0%;
+}
+#pieceNamePlate, #titleNamePlate, #helpButton {
+  background: rgb(50,100,150);
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  border-radius: 7%;
+  justify-content: space-around;
+  text-align: center;
+  cursor: none;
+  align-items: center;
+  margin-bottom: 7vh;
+  padding: 3%;
+  transition: 0.5s
+}
+
+#pieceNamePlate:hover, #titleNamePlate:hover, #helpButton:hover {
+  background: rgb(80,160,240);
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  border-radius: 50%;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 7vh;
+  padding: 3%;
+  transition: 0.5s; 
+  cursor: none;
+}
+
+#pieceNamePlate:active, #titleNamePlate:active, #helpButton:active {
+  animation: grow 5s
+}
+.cursorMouse {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 4px solid black;
+  border-radius: 50%;
+  background: rgb(50,100,150);
+  position: absolute;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  transition: all 0.5s ease;
+  transform-origin: 100% 100%;
+  transition-property: background, transform, opacity; 
+  z-index: 1;
+}
+.hovering {
+  transform: scale(2);
+  background: rgba(140,200,240,0.7)
+
+}
+.clear {
+  transition: 0.3s;
+  transition-property: opacity, background, transform; 
+  opacity: 0%;
+ }
+.not-clear {
+  transition: 0.3s;
+  transition-property: opacity, background, transform;
+ }
+
+@keyframes title_shrink {
+	0% {
+		font-size: 500%;
+	}
+	100% {
+		font-size: 200%;
+	}
+}
+@keyframes fade_in {
+  0%{
+    opacity: 0%
+  }
+  100% {
+    opacity: 100%
+  }
+
+}
+@keyframes grow {
+  50% {
+    width: 250px
+    height: 250px;
+  }
+  100% {
+    width: 200px
+    height: 200px;
+  }
+}
+
+
+
+
+
+
+
