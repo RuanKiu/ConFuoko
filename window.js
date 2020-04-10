@@ -158,6 +158,35 @@ for(i=0; i<audioFiles.length; i++) {
 
 	});	
 };
+window.addEventListener('load', function() {
+    console.log(document.cookie);
+    var visit = getCookie("cookie");
+    if (visit == null) {
+        alert("Welcome to Con Fuoko! Click on the middle (begin) button to play a random piece. Click on it again if you want to generate another random piece. More instructions can be found on the 'guide' page. Licenses and attributions can be found on the attributions page.");
+        var expire = new Date();
+        expire = new Date(expire.getTime() + 7776000000);
+        document.cookie = "cookie=here; expires=" + expire;
+    }
+});
+
+function getCookie(c_name) {
+    var c_value = document.cookie;
+    var c_start = c_value.indexOf(" " + c_name + "=");
+    if (c_start == -1) {
+        c_start = c_value.indexOf(c_name + "=");
+    }
+    if (c_start == -1) {
+        c_value = null;
+    } else {
+        c_start = c_value.indexOf("=", c_start) + 1;
+        var c_end = c_value.indexOf(";", c_start);
+        if (c_end == -1) {
+            c_end = c_value.length;
+        }
+        c_value = unescape(c_value.substring(c_start, c_end));
+    }
+    return c_value;
+}
 
 //audio shennagigains
 
