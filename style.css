@@ -16,7 +16,7 @@ body {
   font-weight: bolder;
   font-size: 15px;
   min-height: 100%;
-  min-width: 100%;
+  min-width: 100vw;
 }
 
 #main_heading {
