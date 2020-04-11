@@ -10,15 +10,16 @@ var body = document.getElementById('body');
 //cursor shennanigaings
 var mouseCursor = document.querySelector('.cursorMouse');
 window.addEventListener('mousemove', cursor);
-window.addEventListener('dblclick', function() {
-
-	if (mouseCursor.classList.contains('clear')) {
-		mouseCursor.classList.remove('clear')
-		mouseCursor.classList.add('not-clear')
-	}
-	else {
-		mouseCursor.classList.add('clear')
-	}
+window.addEventListener('keyup', event => {
+	if(event.isComposing || event.which==32){
+		if (mouseCursor.classList.contains('clear')) {
+			mouseCursor.classList.remove('clear')
+			mouseCursor.classList.add('not-clear')
+		}
+		else {
+			mouseCursor.classList.add('clear')
+		}
+	}	
 });
 function cursor(e) {
 	mouseCursor.style.top = e.pageY + 'px';
@@ -162,7 +163,7 @@ window.addEventListener('load', function() {
     console.log(document.cookie);
     var visit = getCookie("cookie");
     if (visit == null) {
-        alert("Welcome to Con Fuoko! Click on the middle (begin) button to play a random piece. Click on it again if you want to generate another random piece. More instructions can be found on the 'guide' page. Licenses and attributions can be found on the attributions page.");
+        alert("Welcome to Con Fuoko! Middle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => hide mouse\nClick and hold on each attribution (on attributions page) or instruction (on guide page) => enlarge");
         var expire = new Date();
         expire = new Date(expire.getTime() + 7776000000);
         document.cookie = "cookie=here; expires=" + expire;
