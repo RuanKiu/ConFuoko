@@ -121,7 +121,36 @@ var audioNames = [
 	"Reminiscences of New York, Book 1 - XII. Finale - Shuwen Zhang - Played by composer (20)",
 	"Little Blues, Op. 7a - Robin Schreiber - Played by composer (21)",
 	"Jazz Sketch No. 1 in C major - Shuwen Zhang - Played by composer (22)",
-	"Etude No.17 in A-flat major 'Autumn in New York - Shuwen Zhang - Played by composer (23)"
+	"Etude No.17 in A-flat major 'Autumn in New York - Shuwen Zhang - Played by composer (23)",
+	"Reminiscences of New York, Book 2 - I. Opening - Exotic Dream - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - II. Wandering in Sakura Park and Hudson Riverside - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - III. Walking to the D Train - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - IV. Bagpipe Uncle at the Subway Entrance - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - V. The Dusk in 125th Street - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - VI. Souvenir Store in Metropolitan Opera House - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - VII. Central Park Horse Carriage - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - VIII. The Huge Christmas Tree in Rockefeller Center - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - IX. Homesick - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - X. New Year in China Town - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XI. Floating Clouds in the Sky of NYC - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XII. Snow Storm - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XIII. A Noisy Night at a Club in Queens - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XIV. Crazy Skilled Driver - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XV. Momentary Pleasure - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XVI. Across the Brooklyn Bridge - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XVII. Dim Sum Canteen in Brooklyn - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XVIII. Manhattan Afternoon Tea - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XIX. Waffles & Maple Syrup - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XX. Habanera Sentimental - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XXI. Melting Heart - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XXII. Lost in the Rainy Madison Avenue - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XXIII. Dinner in Grand Central - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XXIV. East River Cruise - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XXV. Graduation Ceremony in Riverside Church - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XXVI. Tango Bear (Tango Fantasia on Parallel Seventh Chords) - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XXVII. A Trip to the Liberty Island - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XXVIII. Separation in Long Island - Shuwen Zhang - Played by composer (20)",
+	"Reminiscences of New York, Book 2 - XXIX. Closing (Thematic Flashbacks) - Shuwen Zhang - Played by composer (20)",
 
 ];
 var pieceLabel = document.getElementById('piecelabel')
@@ -163,7 +192,6 @@ for(i=0; i<audioFiles.length; i++) {
 	});	
 };
 window.addEventListener('load', function() {
-    console.log(document.cookie);
     var visit = getCookie("cookie");
     if (visit == null) {
         alert("Welcome to Con Fuoko! Middle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => hide mouse\nClick and hold on each attribution (on attributions page) or instruction (on guide page) => enlarge");
