@@ -119,6 +119,9 @@ var audioNames = [
 	"Reminiscences of New York, Book 1 - X. China Town Scherzo - Shuwen Zhang - Played by composer (20)",
 	"Reminiscences of New York, Book 1 - XI. Farewell - Shuwen Zhang - Played by composer (20)",
 	"Reminiscences of New York, Book 1 - XII. Finale - Shuwen Zhang - Played by composer (20)",
+	"Little Blues, Op. 7a - Robin Schreiber - Played by composer (21)",
+	"Jazz Sketch No. 1 in C major - Shuwen Zhang - Played by composer (22)",
+	"Etude No.17 in A-flat major 'Autumn in New York - Shuwen Zhang - Played by composer (23)"
 
 ];
 var pieceLabel = document.getElementById('piecelabel')

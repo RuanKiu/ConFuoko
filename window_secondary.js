@@ -2,7 +2,7 @@ titles = document.querySelectorAll('.titles');
 directions = document.querySelectorAll('.directions');
 attributes = document.querySelectorAll('.attribute');
 
-
+console.log(attributes.length)
 let mouseCursor = document.querySelector('.cursorMouse');
 window.addEventListener('mousemove', cursor);
 function cursor(e) {
