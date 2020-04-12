@@ -127,9 +127,11 @@ body {
  }
 .not-clear {
   transition: 0.3s;
-  transition-property: opacity,background, transform; 
+  transition-property: opacity, background, transform; 
 }
-
+.lag {
+  transition: 5s; 
+}
 @keyframes fade_in {
   0%{
     opacity: 0%

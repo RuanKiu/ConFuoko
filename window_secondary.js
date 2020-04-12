@@ -14,6 +14,7 @@ function cursor(e) {
 		mouseCursor.classList.remove('clear')
 		mouseCursor.classList.add('not-clear')
 	}	
+	mouseCursor.classList.remove('lag')
 };
 window.addEventListener('keyup', event => {
 	if(event.isComposing || event.which==32){
@@ -35,7 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.cookie = "cookie=here; expires=" + expire;
     }
 });
-
+window.addEventListener('scroll', function() {
+	mouseCursor.classList.add('clear')
+	mouseCursor.classList.add('lag')
+});
 function getCookie(c_name) {
     var c_value = document.cookie;
     var c_start = c_value.indexOf(" " + c_name + "=");
