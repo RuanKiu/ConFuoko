@@ -9,6 +9,32 @@ var helpButton = document.getElementById('helpButton');
 var body = document.getElementById('body');
 //cursor shennanigaings
 var mouseCursor = document.querySelector('.cursorMouse');
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+if( isMobile.any() ) {
+	mouseCursor.remove()
+}
+else{
+	console.log("not mobile")
+};
 window.addEventListener('mousemove', cursor);
 window.addEventListener('keyup', event => {
 	if(event.isComposing || event.which==32){
@@ -191,6 +217,7 @@ for(i=0; i<audioFiles.length; i++) {
 
 	});	
 };
+//cookie
 window.addEventListener('load', function() {
     var visit = getCookie("cookie");
     if (visit == null) {
@@ -200,7 +227,6 @@ window.addEventListener('load', function() {
         document.cookie = "cookie=here; expires=" + expire;
     }
 });
-
 function getCookie(c_name) {
     var c_value = document.cookie;
     var c_start = c_value.indexOf(" " + c_name + "=");
@@ -220,7 +246,7 @@ function getCookie(c_name) {
     return c_value;
 }
 
-//audio shennagigains
+
 
 
 //universal console testing
