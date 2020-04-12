@@ -194,7 +194,7 @@ for(i=0; i<audioFiles.length; i++) {
 window.addEventListener('load', function() {
     var visit = getCookie("cookie");
     if (visit == null) {
-        alert("Welcome to Con Fuoko! Middle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => hide mouse\nClick and hold on each attribution (on attributions page) or instruction (on guide page) => enlarge");
+        alert("Welcome to Con Fuoko! Middle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => hide mouse\n")        
         var expire = new Date();
         expire = new Date(expire.getTime() + 7776000000);
         document.cookie = "cookie=here; expires=" + expire;
