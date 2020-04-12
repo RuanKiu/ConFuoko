@@ -54,7 +54,7 @@ else{
 	console.log("not mobile")
 };
 document.addEventListener('DOMContentLoaded', function() {
-    var visit = getCookie("cookie_1");
+    var visit = getCookie("cookie");
     if (visit == null) {
         alert("This is a subpage! To enlarge the textboxes, click and hold on the area within each box.")        
         var expire = new Date();
