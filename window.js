@@ -177,6 +177,13 @@ var audioNames = [
 	"Reminiscences of New York, Book 2 - XXVII. A Trip to the Liberty Island - Shuwen Zhang - Played by composer (20)",
 	"Reminiscences of New York, Book 2 - XXVIII. Separation in Long Island - Shuwen Zhang - Played by composer (20)",
 	"Reminiscences of New York, Book 2 - XXIX. Closing (Thematic Flashbacks) - Shuwen Zhang - Played by composer (20)",
+	"Rhapsody in Blue - Gershwin - Jeff Manookian (24)",
+	"Fantaisie-impromptu, Op.66 - Chopin - Frank Levy (25)",
+	"Zigeunerweisen, Op.20 - Sarasate - Jean-Claude Feret, Christine Feret (26)",
+	"Navarra, Op.33 - Sarasate - Roxana Pavel Goldstein, Elias Goldstein (27)",
+	"Etudes d'exécution transcendante, S.139 - IV. Mazzepa - Liszt - Peter Bradley-Fulgoni (28)",
+	"Etudes d'exécution transcendante, S.139 - VIII. Wilde Jagd - Liszt - Shuwen Zhang (29)",
+	"Etude in D-sharp minor No.12 Op.8 - Scriabin - Stanislav Ossovsky (30)",
 
 ];
 var pieceLabel = document.getElementById('piecelabel')
