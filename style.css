@@ -92,7 +92,11 @@ body {
   transition: 0.3s;
   transition-property: opacity, background, transform;
  }
-
+footer {
+  position: absolute;
+  bottom: 0px;
+  font-size: 3vh;
+}
 @keyframes title_shrink {
 	0% {
 		font-size: 500%;

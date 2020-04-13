@@ -132,6 +132,10 @@ body {
 .lag {
   transition: 5s; 
 }
+footer {
+  font-size: 3vh;
+  align-items: baseline; 
+}
 @keyframes fade_in {
   0%{
     opacity: 0%
