@@ -1,12 +1,18 @@
 //buttons and whatnot
-var beatStart = document.getElementById('beat')
-var padOne = document.getElementById('pad1');
-var mainHeading = document.getElementById('main_heading');
-var pieceLabel = document.getElementById('piecelabel');
-var pieceNamePlate = document.getElementById('pieceNamePlate');
-var titleNamePlate = document.getElementById('titleNamePlate');
-var helpButton = document.getElementById('helpButton');
-var body = document.getElementById('body');
+try {
+	var beatStart = document.getElementById('beat')
+	var padOne = document.getElementById('pad1');
+	var mainHeading = document.getElementById('main_heading');
+	var pieceLabel = document.getElementById('piecelabel');
+	var pieceNamePlate = document.getElementById('pieceNamePlate');
+	var titleNamePlate = document.getElementById('titleNamePlate');
+	var helpButton = document.getElementById('helpButton');
+	var body = document.getElementById('body');
+}
+catch(err) {
+	console.log("loading error")
+}
+
 //cursor shennanigaings
 var mouseCursor = document.querySelector('.cursorMouse');
 var isMobile = {
@@ -186,21 +192,40 @@ var audioNames = [
 	"Etude in D-sharp minor No.12 Op.8 - Scriabin - Stanislav Ossovsky (30)",
 
 ];
+try {
+	if (audioFiles.length !== audioNames.length) {
+		throw "numerror"
+	}
+}
+catch(err) {
+	console.log("Name and piece correlation error")
+}
 var pieceLabel = document.getElementById('piecelabel')
 //functions and whatnot
+
 pieceNamePlate.addEventListener('click', function() {
-	for(i=0; i<audioFiles.length; i++) {
+	try {
+		for(i=0; i<audioFiles.length; i++) {
 		audioFiles[i].pause()
 		audioFiles[i].currentTime = 0
+		}
+		var randomPosition = Math.floor(Math.random() * audioFiles.length)
+		pieceLabel.innerHTML = audioNames[randomPosition]
+		var randomPiece = audioFiles[randomPosition]
+		//time for the stop button instance!!!!
+		beatStart.currentTime = 0
+		beatStart.play()
+		randomPiece.play()
+		console.log(randomPiece)
 	}
-	var randomPosition = Math.floor(Math.random() * audioFiles.length)
-	pieceLabel.innerHTML = audioNames[randomPosition]
-	var randomPiece = audioFiles[randomPosition]
-	//time for the stop button instance!!!!
-	beatStart.currentTime = 0
-	beatStart.play()
-	randomPiece.play()
-	console.log(randomPiece)
+	catch(err) {
+		for(i=0; i<audioFiles.length; i++) {
+			audioFiles[i].pause()
+			audioFiles[i].currentTime = 0
+			randomPiece.play()	
+		}
+		console.log(randomPiece)
+	}
 });
 
 titleNamePlate.addEventListener('click', function() {
