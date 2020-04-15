@@ -5,9 +5,12 @@ try {
 	var mainHeading = document.getElementById('main_heading');
 	var pieceLabel = document.getElementById('piecelabel');
 	var pieceNamePlate = document.getElementById('pieceNamePlate');
+	var pauseButton = document.getElementById('pauseButton');
 	var titleNamePlate = document.getElementById('titleNamePlate');
 	var helpButton = document.getElementById('helpButton');
 	var body = document.getElementById('body');
+	var basicButtons = document.querySelectorAll('.basicButton');
+	var mainApp = document.querySelector('.sectionsa')
 }
 catch(err) {
 	console.log("loading error")
@@ -35,12 +38,14 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
-if( isMobile.any() ) {
+if(isMobile.any() ) {
 	mouseCursor.remove()
 }
 else{
 	console.log("not mobile")
 };
+
+//mouse shenanagains
 window.addEventListener('mousemove', cursor);
 window.addEventListener('keyup', event => {
 	if(event.isComposing || event.which==32){
@@ -56,39 +61,34 @@ window.addEventListener('keyup', event => {
 function cursor(e) {
 	mouseCursor.style.top = e.pageY + 'px';
 	mouseCursor.style.left = e.pageX + 'px';
-	if (e.clientY <= '70') {
+	if (e.clientY <= 70 || e.clientX <= 40 || e.clientX >= window.innerWidth - 40 || e.clientY >= window.innerHeight - 40 ){
 		mouseCursor.classList.add('clear')
 	} else {
 		mouseCursor.classList.remove('clear')
-	}	
+	}
+
 };
 //mobile stuff
 window.addEventListener('mouseleave', blank);
 function blank(e) {
 	mouseCursor.classList.add('clear')
 }
-//piece name
-pieceNamePlate.addEventListener('mouseover',  () => {
-	mouseCursor.classList.add('hovering')
-});
-pieceNamePlate.addEventListener('mouseleave',  () => {
-	mouseCursor.classList.remove('hovering')
-});
-//title
-titleNamePlate.addEventListener('mouseover', () => {
-	mouseCursor.classList.add('hovering')
-});
-titleNamePlate.addEventListener('mouseleave',  () => {
-	mouseCursor.classList.remove('hovering')
-});
-//help 
-helpButton.addEventListener('mouseover', () => {
-	mouseCursor.classList.add('hovering')
-});
-helpButton.addEventListener('mouseleave',  () => {
-	mouseCursor.classList.remove('hovering')
-});
 
+//cursor shenanagains
+for (i= 0; i < basicButtons.length; i++) {
+	basicButtons[i].addEventListener('mouseover',  () => {
+		mouseCursor.classList.add('hovering')
+	});
+	basicButtons[i].addEventListener('mouseleave',  () => {
+		mouseCursor.classList.remove('hovering')
+	});
+}
+pauseButton.addEventListener('mouseover',  () => {
+	mouseCursor.classList.add('hovering')
+});
+pauseButton.addEventListener('mouseleave',  () => {
+	mouseCursor.classList.remove('hovering')
+});
 
 //audio and whatnot
 var audioFiles = document.querySelectorAll('.music')
@@ -190,6 +190,10 @@ var audioNames = [
 	"Etudes d'exécution transcendante, S.139 - IV. Mazzepa - Liszt - Peter Bradley-Fulgoni (28)",
 	"Etudes d'exécution transcendante, S.139 - VIII. Wilde Jagd - Liszt - Shuwen Zhang (29)",
 	"Etude in D-sharp minor No.12 Op.8 - Scriabin - Stanislav Ossovsky (30)",
+	"Symphony No. 6 in B minor, Op. 74 'Pathetique' - IV. Finale. Adagio lamentoso - Barbara Schubert (31)",
+	"Paganini Variations on 'I Palpiti', Op. 13 - Paganini - Rika Masato (32)",
+	"Humoresque no. 7 in Gb Op. 101/7 (Violin and Piano arr.) - Dvorak - Oliver Colbentson",
+	"Nocturne in E minor, Op. posth. 72 - Chopin - Luke Faulkner"
 
 ];
 try {
@@ -201,55 +205,80 @@ catch(err) {
 	console.log("Name and piece correlation error")
 }
 var pieceLabel = document.getElementById('piecelabel')
-//functions and whatnot
 
-pieceNamePlate.addEventListener('click', function() {
-	try {
+
+
+//functions and whatnot//////////////////
+function pausePiece() {
+	beatStart.currentTime = 0
+	beatStart.play()
 		for(i=0; i<audioFiles.length; i++) {
+			if (audioFiles[i].currentTime > 0) {
+				if (audioFiles[i].paused) {
+					audioFiles[i].play()
+					pauseButton.innerHTML = 'Pause'
+				}
+				else {
+					audioFiles[i].pause()
+					pauseButton.innerHTML = 'Play'
+				}
+		}
+		else {
+			audioFiles[i].pause()
+		}
+	}
+}
+function randomize() {
+	beatStart.currentTime = 0
+	beatStart.play()
+	pauseButton.classList.add('basicButton')
+	pauseButton.classList.remove('invisible')
+	pauseButton.innerHTML = 'Pause'
+	for(i=0; i<audioFiles.length; i++) {
 		audioFiles[i].pause()
 		audioFiles[i].currentTime = 0
-		}
-		var randomPosition = Math.floor(Math.random() * audioFiles.length)
-		pieceLabel.innerHTML = audioNames[randomPosition]
-		var randomPiece = audioFiles[randomPosition]
-		//time for the stop button instance!!!!
-		beatStart.currentTime = 0
-		beatStart.play()
-		randomPiece.play()
-		console.log(randomPiece)
 	}
-	catch(err) {
-		for(i=0; i<audioFiles.length; i++) {
-			audioFiles[i].pause()
-			audioFiles[i].currentTime = 0
-			randomPiece.play()	
-		}
-		console.log(randomPiece)
-	}
-});
+	var randomPosition = Math.floor(Math.random() * audioFiles.length)
+	pieceLabel.innerHTML = audioNames[randomPosition]
+	var randomPiece = audioFiles[randomPosition]
+	//time for the stop button instance!!!!
+	randomPiece.play()
+	console.log(randomPiece)
 
-titleNamePlate.addEventListener('click', function() {
+};
+function genNextPiece() {
+	pauseButton.innerHTML = 'Pause'
+	for(i=0; i<audioFiles.length; i++) {
+		audioFiles[i].pause()
+		audioFiles[i].currentTime = 0
+	}	
+	var randomPosition = Math.floor(Math.random() * audioFiles.length)
+	var nextRandomPiece = audioFiles[randomPosition]
+	nextRandomPiece.play()
+	pieceLabel.innerHTML = audioNames[randomPosition]
+	console.log(nextRandomPiece)
+}
+function openAtt() {
 	beatStart.play()
 	window.open('attributions.html')
-});
-helpButton.addEventListener('click', function() {
+}
+function openHelp() {
 	beatStart.play()
 	window.open('help.html')
-});
+}
+pieceNamePlate.addEventListener('click', randomize);
+titleNamePlate.addEventListener('click', openAtt);
+helpButton.addEventListener('click', openHelp);
+pauseButton.addEventListener('click', pausePiece);
 for(i=0; i<audioFiles.length; i++) {
-	audioFiles[i].pause()
-	audioFiles[i].currentTime = 0
-	audioFiles[i].addEventListener('ended', function() {
-		pieceLabel.style.animation = 'grow 0.5s'
-		var randomPosition = Math.floor(Math.random() * audioFiles.length)
-		var nextRandomPiece = audioFiles[randomPosition]
-		nextRandomPiece.play()
-		pieceLabel.innerHTML = audioNames[randomPosition]
-		console.log(nextRandomPiece)
+	audioFiles[i].addEventListener('ended', genNextPiece)
 
-	});	
 };
-//cookie
+
+
+
+
+//cookie///////////////////
 window.addEventListener('load', function() {
     var visit = getCookie("cookie");
     if (visit == null) {

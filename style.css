@@ -7,62 +7,66 @@
 }
 body {
   font-family: 'Megrim', cursive;
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-  justify-content: space-around;
+  height: 100vh;
   cursor: none;
-  margin-top: 15vh;
-  font-weight: bolder;
-  font-size: 15px;
-  min-height: 100%;
-  min-width: 100vw;
+  
 }
-
 #main_heading {
 	text-align: center;
+  margin-top: 10vh;
+}
+#helpButton {
+  margin-bottom: 10vh;
 }
 .app {
-  min-height: 100%;
-  min-width: 100%;
+  height: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   padding: auto;
-  margin-top: 0%;
+  margin: auto;
 }
-#pieceNamePlate, #titleNamePlate, #helpButton {
+.basicButton {
   background: rgb(50,100,150);
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 3px;
   border-radius: 7%;
   justify-content: space-around;
   text-align: center;
   cursor: none;
   align-items: center;
-  margin-bottom: 7vh;
-  padding: 3%;
-  transition: 0.5s
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  padding: 4vh;
+  transition: 1s
 }
 
-#pieceNamePlate:hover, #titleNamePlate:hover, #helpButton:hover {
+.basicButton:hover {
   background: rgb(80,160,240);
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 3px;
   border-radius: 50%;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 7vh;
-  padding: 3%;
-  transition: 0.5s; 
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  padding: 4vh;
+  transition: 0.7s; 
   cursor: none;
 }
 
-#pieceNamePlate:active, #titleNamePlate:active, #helpButton:active {
+.basicButton:active  {
   animation: grow 5s
+}
+.invisible {
+  opacity: 0;
+  font-size: 0px;
+  width: 0px;
+  margin: 0px;
 }
 .cursorMouse {
   width: 1.5rem;
@@ -84,17 +88,26 @@ body {
 
 }
 .clear {
-  transition: 0.3s;
+  transition: 0.5s;
   transition-property: opacity, background, transform; 
   opacity: 0%;
- }
+}
 .not-clear {
-  transition: 0.3s;
+  transition: 0.5s;
   transition-property: opacity, background, transform;
- }
+}
+.sectionsa {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
 footer {
   position: absolute;
   bottom: 0px;
+  margin: none;
   font-size: 3vh;
 }
 @keyframes title_shrink {
