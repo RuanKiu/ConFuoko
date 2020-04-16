@@ -10,7 +10,9 @@ try {
 	var helpButton = document.getElementById('helpButton');
 	var body = document.getElementById('body');
 	var basicButtons = document.querySelectorAll('.basicButton');
-	var mainApp = document.querySelector('.sectionsa')
+	var mainApp = document.querySelector('.sectionsa');
+	var loadingDiv = document.getElementById("loading");
+	loadingDiv.classList.add('not-clear');
 }
 catch(err) {
 	console.log("loading error")
@@ -280,7 +282,10 @@ for(i=0; i<audioFiles.length; i++) {
 
 //cookie///////////////////
 window.addEventListener('load', function() {
-    var visit = getCookie("cookie");
+	loadingDiv.classList.add('loading-finished')
+
+	
+	var visit = getCookie("cookie");
     if (visit == null) {
         alert("Welcome to Con Fuoko!\nMiddle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => hide mouse\n")        
         var expire = new Date();

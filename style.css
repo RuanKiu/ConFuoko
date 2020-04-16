@@ -110,6 +110,114 @@ footer {
   margin: none;
   font-size: 3vh;
 }
+.loading {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  transition: 1s;
+  cursor: none;
+  font-size: 10vh;
+  z-index: 99;
+  position: absolute;
+  background: white;
+  animation: none;
+}
+.loading-finished {
+  opacity: 0%;
+  cursor: none;
+  animation: none;
+  z-index: -99;
+}
+.lodCirc {
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  width: 5vw;
+  height: 5vw;
+  margin: 2vw;
+  border-radius: 50%;
+}
+.animationCircles {
+  margin: 5vh auto 5vh auto;
+  display: flex;
+  justify-content: space-around;
+}
+.lodCirc:nth-child(1) {
+  background: white;
+  animation: blackwhite 1s .6s infinite;
+}
+.lodCirc:nth-child(2) {
+  background: white;
+  animation: blackwhite 1s .8s infinite;
+}
+.lodCirc:nth-child(3) {
+  background: white;
+  animation: blackwhite 1s 1s infinite;
+}
+
+@media only screen and (max-width: 700px) {
+  .basicButton {
+  background: rgb(50,100,150);
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 7%;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 1.5vh;
+  cursor: none;
+  align-items: center;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  padding: 3vh;
+  transition: 1s
+  }
+
+  .basicButton:hover {
+    background: rgb(80,160,240);
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 50%;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+    padding: 3vh;
+    transition: 0.7s; 
+    cursor: none;
+    text-align: center;
+    font-size: 1.5vh;
+  }
+  .app {
+    width: 80%;
+  }
+}
+
+@keyframes fade_out {
+  0%{
+    opacity: 100%
+  }
+  100% {
+    opacity: 0%
+  }
+
+}
+@keyframes blackwhite {
+  0%{
+    background: black;
+  }
+  50%{
+    background: white;
+  }
+  100% {
+    background: black;
+  }
+
+}
 @keyframes title_shrink {
 	0% {
 		font-size: 500%;
