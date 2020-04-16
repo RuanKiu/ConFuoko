@@ -159,7 +159,7 @@ footer {
   animation: blackwhite 1s 1s infinite;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 650px) {
   .basicButton {
   background: rgb(50,100,150);
   border-style: solid;
@@ -171,8 +171,8 @@ footer {
   font-size: 1.5vh;
   cursor: none;
   align-items: center;
-  margin-bottom: 3vh;
-  margin-top: 3vh;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
   padding: 3vh;
   transition: 1s
   }
@@ -185,8 +185,8 @@ footer {
     border-radius: 50%;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 3vh;
-    margin-top: 3vh;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
     padding: 3vh;
     transition: 0.7s; 
     cursor: none;
