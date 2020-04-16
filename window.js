@@ -276,7 +276,13 @@ for(i=0; i<audioFiles.length; i++) {
 	audioFiles[i].addEventListener('ended', genNextPiece)
 
 };
-
+if(isMobile.any() ) {
+	loadingDiv.classList.add('loading-finished')
+	console.log('loading procedure: mobile')
+}
+else{
+	console.log("loading procedure: normal")
+};
 
 
 
@@ -287,7 +293,14 @@ window.addEventListener('load', function() {
 	
 	var visit = getCookie("cookie");
     if (visit == null) {
-        alert("Welcome to Con Fuoko!\nMiddle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => hide mouse\n")        
+		if(isMobile.any() ) {
+			loadingDiv.classList.add('loading-finished')
+			console.log('No alert')
+		}
+		else{
+			alert("Welcome to Con Fuoko!\nMiddle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => hide mouse\n")
+			console.log("normal alert")
+		};
         var expire = new Date();
         expire = new Date(expire.getTime() + 7776000000);
         document.cookie = "cookie=here; expires=" + expire;

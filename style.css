@@ -127,6 +127,7 @@ footer {
 }
 .loading-finished {
   opacity: 0%;
+  visibility: hidden;
   cursor: none;
   animation: none;
   z-index: -99;
