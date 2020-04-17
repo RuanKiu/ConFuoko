@@ -8,7 +8,8 @@
 body {
 	overflow: auto;
 	margin: 2%;
-  font-family: 'Megrim', cursive;
+  font-family: 'Comfortaa', cursive;
+  color: white;
 	align-items: center;
 	justify-content: space-around;
 	display: flex;
@@ -22,55 +23,53 @@ body {
 .cursorMouse {
   width: 1.5rem;
   height: 1.5rem;
-  border: 4px solid black;
+  border: 0px solid black;
   border-radius: 50%;
-  background: rgb(50,100,150);
+  background: rgb(30,70,120);
   position: absolute;
   transform: translate(-50%,-50%);
   pointer-events: none;
-  transition: all 0.5s;
+  transition: 0.5s;
   transform-origin: 100% 100%;
-  transition-property: background, transform; 
+  transition-property: background, transform, border; 
   z-index: 1;
 }
 .hovering {
   transform: scale(2);
-  background: rgba(140,200,240,0.7)
+  background: rgba(140,200,240,0.6);
+  border-width: 0px;
 }
 .titles {
   background: rgb(50,100,150);
-  padding: 1%;
-  border-width: 3px;
+  padding: 10%;
   border-radius: 5%;
-  border-style: solid;
-  border-color: black;
   transition: 0.5s;
   width: 50%;
   text-align: center;
-  font-size: 30px;
+  font-size: 7vh;
+  margin-bottom: 15vh;
+  margin-top: 15vh;
+  text-align: center;
 
 }
 .titles:hover {
   background: rgb(80,160,240);
-  padding: 1%;
-  border-width: 3px;
+  padding: 10%;
   border-radius: 5%;
-  border-style: solid;
-  border-color: black;
   transition: 0.5s;
   width: 50%;
   text-align: center;
-  font-size: 30px;
+  font-size: 7vh;
   cursor: none;
+  margin-bottom: 15vh;
+  margin-top: 15vh;
+
 
 }
 .directions {
   background: rgb(50,100,150);
   padding: 1%;
-  border-width: 3px;
   border-radius: 5%;
-  border-style: solid;
-  border-color: black;
   transition: 0.5s;
   width: 50%;
   text-align: center;
@@ -80,10 +79,7 @@ body {
 .directions:hover{
   background: rgb(80,160,240);
   padding: 1%;
-  border-width: 3px;
   border-radius: 5%;
-  border-style: solid;
-  border-color: black;
   transition: 0.5s;
   width: 50%;
   text-align: center;
@@ -94,29 +90,23 @@ body {
 }
 .attribute {
   background: rgb(50,100,150);
-  padding: 4%;
-  border-width: 2px;
+  padding: 7%;
   border-radius: 5%;
-  border-style: solid;
-  border-color: black;
-  transition: 0.5s;
-  width: 40%;
+  transition: 1s;
+  width: 30%;
   text-align: center;
-  font-size: 15px;
+  font-size: 2.5vh;
+  line-height: 2;
   cursor: none;
-  margin: 3vh;
+  margin: 5vh;
 }
-.attribute:active {
+.attribute:hover {
   background: rgb(80,160,240);
-  padding: 5%;
-  border-width: 2px;
-  border-radius: 50%;
-  border-style: solid;
-  border-color: black;
-  transition: 0.5s;
-  width: 50%;
+  padding: 7%;
+  transition: 1s;
+  width: 30%;
   text-align: center;
-  font-size: 15px;
+  font-size: 2.5vh;
   cursor: none;
 
 }
@@ -128,9 +118,6 @@ body {
 .not-clear {
   transition: 0.3s;
   transition-property: opacity, background, transform; 
-}
-.lag {
-  transition: 5s; 
 }
 footer {
   font-size: 3vh;

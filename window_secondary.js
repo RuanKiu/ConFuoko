@@ -5,17 +5,6 @@ attributes = document.querySelectorAll('.attribute');
 console.log(attributes.length)
 let mouseCursor = document.querySelector('.cursorMouse');
 window.addEventListener('mousemove', cursor);
-function cursor(e) {
-	mouseCursor.style.top = e.pageY + 'px';
-	mouseCursor.style.left = e.pageX + 'px';
-	if (e.clientY <= '30') {
-		mouseCursor.classList.add('clear')
-	} else {
-		mouseCursor.classList.remove('clear')
-		mouseCursor.classList.add('not-clear')
-	}	
-	mouseCursor.classList.remove('lag')
-};
 window.addEventListener('keyup', event => {
 	if(event.isComposing || event.which==32){
 		if (mouseCursor.classList.contains('clear')) {
@@ -27,6 +16,16 @@ window.addEventListener('keyup', event => {
 		}
 	}	
 });
+function cursor(e) {
+	mouseCursor.style.top = e.pageY + 'px';
+	mouseCursor.style.left = e.pageX + 'px';
+	if (e.clientY <= 70 || e.clientX <= 40 || e.clientX >= window.innerWidth - 40 || e.clientY >= window.innerHeight - 40 ){
+		mouseCursor.classList.add('clear')
+	} else {
+		mouseCursor.classList.remove('clear')
+	}
+
+};
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
@@ -62,10 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.cookie = "cookie=here; expires=" + expire;
     }
 });
-window.addEventListener('scroll', function() {
-	mouseCursor.classList.add('clear')
-	mouseCursor.classList.add('lag')
-});
+
 function getCookie(c_name) {
     var c_value = document.cookie;
     var c_start = c_value.indexOf(" " + c_name + "=");
