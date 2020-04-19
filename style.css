@@ -156,7 +156,7 @@ footer {
   background: rgb(50,100,150);
   border-style: solid;
   border-color: black;
-  border-width: 2px;
+  border-width: 0px;
   border-radius: 7%;
   justify-content: space-around;
   text-align: center;

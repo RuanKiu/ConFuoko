@@ -180,6 +180,11 @@ var audioNames = [
 	"Gymnopedie No.1 - Satie - Edward Rosser",
 	"Ma Vlast - Vltava (The Moldau) - Smetana - Musopen Symphony",
 	"Moonlight Sonata, Op. 27 No. 2 - I. Adagio sostenuto -  Paul Pitman - Beethoven",
+	"Swan lake Op.20 - Act II Pt. I - European Archives - Tchaikovsky",
+	"Violin Concerto No. I in E-flat major, Op. 6 - I. Allegro maestoso - Paganini - European Archives",
+	"The Nutcracker Suite - Act I, No. II. March - Tchaikovsky - European Archives",
+	"The Nutcracker Suite - Act I, No. VIII. Waltz of The Flowers - Tchaikovsky - European Archives",
+	"Sonata No. 21, Op. 53 in C Major Waldstein - I. Allegro Con Brio - Beethoven - Paul Pitman",
 ];
 try {
 	if (audioFiles.length !== audioNames.length) {
