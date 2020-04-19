@@ -173,7 +173,7 @@ footer {
     background: rgb(80,160,240);
     border-style: solid;
     border-color: black;
-    border-width: 2px;
+    border-width: 0px;
     border-radius: 50%;
     justify-content: space-around;
     align-items: center;
