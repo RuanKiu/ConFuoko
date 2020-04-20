@@ -185,6 +185,9 @@ var audioNames = [
 	"The Nutcracker Suite - Act I, No. II. March - Tchaikovsky - European Archives",
 	"The Nutcracker Suite - Act I, No. VIII. Waltz of The Flowers - Tchaikovsky - European Archives",
 	"Sonata No. 21, Op. 53 in C Major Waldstein - I. Allegro Con Brio - Beethoven - Paul Pitman",
+	"Nocturne in E-flat major, Op. 9 No. 2 - Chopin - Frank Levy",
+	"Peer Gynt Suite no. 1, Op. 46 - I. Morning Mood - Grieg - Musopen Symphony",
+	"Peer Gynt Suite no. 1, Op. 46 - IV. In the Hall of the Mountain king - Greig - Musopen Symphony",
 ];
 try {
 	if (audioFiles.length !== audioNames.length) {
