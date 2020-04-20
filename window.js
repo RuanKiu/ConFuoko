@@ -59,6 +59,7 @@ window.addEventListener('keyup', event => {
 			mouseCursor.classList.add('clear')
 		}
 	}	
+	pausePiece();
 });
 function cursor(e) {
 	mouseCursor.style.top = e.pageY + 'px';
@@ -289,7 +290,7 @@ window.addEventListener('load', function() {
 			console.log('No alert')
 		}
 		else{
-			alert("Welcome to Con Fuoko!\nMiddle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => hide mouse\n")
+			alert("Welcome to Con Fuoko!\nMiddle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => pause \n")
 			console.log("normal alert")
 		};
         var expire = new Date();
