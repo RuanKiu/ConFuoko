@@ -189,6 +189,11 @@ var audioNames = [
 	"Nocturne in E-flat major, Op. 9 No. 2 - Chopin - Frank Levy",
 	"Peer Gynt Suite no. 1, Op. 46 - I. Morning Mood - Grieg - Musopen Symphony",
 	"Peer Gynt Suite no. 1, Op. 46 - IV. In the Hall of the Mountain king - Greig - Musopen Symphony",
+	"Elegy, Op.24 - Faure - Narek Hakhnazaryan, cello; Noreen Polera, piano (33)",
+	"Violin Concerto in D major, Op. 61 - I. Allegro ma non troppo - US Marine Chamber Orchestra",
+	"The Chrysanthemum - Joplin - Gerluz (34)",
+	"Piano Sonata no. 8 in C minor 'Pathetique', Op. 13 - II. Adagio cantabile - Beethoven - Paul Pitman",
+	"Piano Sonata no. 8 in C minor 'Pathetique', Op. 13 - I. Grave - Allegro di molto e con brio - Beethoven - Paul Pitman",
 ];
 try {
 	if (audioFiles.length !== audioNames.length) {
