@@ -194,6 +194,9 @@ var audioNames = [
 	"The Chrysanthemum - Joplin - Gerluz (34)",
 	"Piano Sonata no. 8 in C minor 'Pathetique', Op. 13 - II. Adagio cantabile - Beethoven - Paul Pitman",
 	"Piano Sonata no. 8 in C minor 'Pathetique', Op. 13 - I. Grave - Allegro di molto e con brio - Beethoven - Paul Pitman",
+	"The Hebrides (Fingal's Cave), Op.26 - Mendelssohn - Musopen Symphony",
+	"Moonlight Sonata, Op. 27 No. 2 - III. Presto - Paul Pitman",
+	"Prince Igor - Act II. Polovtsian Dances - Borodin - Orchestre symphonique d’Utrecht, Paul Hupperts",
 ];
 try {
 	if (audioFiles.length !== audioNames.length) {
