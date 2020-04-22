@@ -1,6 +1,6 @@
 //buttons and whatnot
 try {
-	var beatStart = document.getElementById('beat')
+	var beatStart = document.getElementById('beat');
 	var padOne = document.getElementById('pad1');
 	var mainHeading = document.getElementById('main_heading');
 	var pieceLabel = document.getElementById('piecelabel');
@@ -13,10 +13,9 @@ try {
 	var mainApp = document.querySelector('.sectionsa');
 	var loadingDiv = document.getElementById("loading");
 	loadingDiv.classList.add('not-clear');
-}
-catch(err) {
+} catch(err) {
 	console.log("loading error")
-}
+};
 
 //cursor shennanigaings
 var mouseCursor = document.querySelector('.cursorMouse');
@@ -41,61 +40,52 @@ var isMobile = {
     }
 };
 if(isMobile.any() ) {
-	mouseCursor.remove()
-}
-else{
-	console.log("not mobile")
+	mouseCursor.remove();
+} else {
+	console.log("not mobile");
 };
 
 //mouse shenanagains
 window.addEventListener('mousemove', cursor);
 window.addEventListener('keyup', event => {
-	if(event.isComposing || event.which==32){
-		if (mouseCursor.classList.contains('clear')) {
-			mouseCursor.classList.remove('clear')
-			mouseCursor.classList.add('not-clear')
-		}
-		else {
-			mouseCursor.classList.add('clear')
-		}
-	}	
+	if (event.which == 32)
 	pausePiece();
 });
 function cursor(e) {
 	mouseCursor.style.top = e.pageY + 'px';
 	mouseCursor.style.left = e.pageX + 'px';
 	if (e.clientY <= 70 || e.clientX <= 40 || e.clientX >= window.innerWidth - 40 || e.clientY >= window.innerHeight - 40 ){
-		mouseCursor.classList.add('clear')
+		mouseCursor.classList.add('clear');
 	} else {
-		mouseCursor.classList.remove('clear')
-	}
+		mouseCursor.classList.remove('clear');
+	};
 
 };
 //mobile stuff
 window.addEventListener('mouseleave', blank);
 function blank(e) {
-	mouseCursor.classList.add('clear')
-}
+	mouseCursor.classList.add('clear');
+};
 
 //cursor shenanagains
 for (i= 0; i < basicButtons.length; i++) {
 	basicButtons[i].addEventListener('mouseover',  () => {
-		mouseCursor.classList.add('hovering')
+		mouseCursor.classList.add('hovering');
 	});
 	basicButtons[i].addEventListener('mouseleave',  () => {
-		mouseCursor.classList.remove('hovering')
+		mouseCursor.classList.remove('hovering');
 	});
-}
+};
 pauseButton.addEventListener('mouseover',  () => {
-	mouseCursor.classList.add('hovering')
+	mouseCursor.classList.add('hovering');
 });
 pauseButton.addEventListener('mouseleave',  () => {
-	mouseCursor.classList.remove('hovering')
+	mouseCursor.classList.remove('hovering');
 });
 
 //audio and whatnot
-var audioFiles = document.querySelectorAll('.music')
-var startPosition = Math.floor(Math.random() * audioFiles.length)
+var audioFiles = document.querySelectorAll('.music');
+var startPosition = Math.floor(Math.random() * audioFiles.length);
 var audioNames = [
 	'Ballade No.1 in G minor - Chopin - Frank Levy (2)',
 	'Etudes Op.10 - Chopin - Alfred Cortot',
@@ -200,111 +190,107 @@ var audioNames = [
 ];
 try {
 	if (audioFiles.length !== audioNames.length) {
-		throw "numerror"
-	}
-}
-catch(err) {
-	console.log("Name and piece correlation error")
-}
-var pieceLabel = document.getElementById('piecelabel')
+		throw "numerror";
+	};
+} catch(err) {
+	console.log("Name and piece correlation error");
+};
+var pieceLabel = document.getElementById('piecelabel');
 
 
 
 //functions and whatnot//////////////////
 function pausePiece() {
-	beatStart.currentTime = 0
-	beatStart.play()
+	beatStart.currentTime = 0;
+	beatStart.play();
 		for(i=0; i<audioFiles.length; i++) {
 			if (audioFiles[i].currentTime > 0) {
 				if (audioFiles[i].paused) {
-					audioFiles[i].play()
-					pauseButton.innerHTML = 'Pause'
+					audioFiles[i].play();
+					pauseButton.innerHTML = 'Pause';
 				}
 				else {
-					audioFiles[i].pause()
-					pauseButton.innerHTML = 'Play'
+					audioFiles[i].pause();
+					pauseButton.innerHTML = 'Play';
 				}
-		}
-		else {
-			audioFiles[i].pause()
-		}
-	}
-}
+		} else {
+			audioFiles[i].pause();
+		};
+	};
+};
 function randomize() {
-	beatStart.currentTime = 0
-	beatStart.play()
-	pauseButton.classList.add('basicButton')
-	pauseButton.classList.remove('invisible')
-	pauseButton.innerHTML = 'Pause'
+	beatStart.currentTime = 0;
+	beatStart.play();
+	pauseButton.classList.add('basicButton');
+	pauseButton.classList.remove('invisible');
+	pauseButton.innerHTML = 'Pause';
 	for(i=0; i<audioFiles.length; i++) {
-		audioFiles[i].pause()
-		audioFiles[i].currentTime = 0
+		audioFiles[i].pause();
+		audioFiles[i].currentTime = 0;
 	}
-	var randomPosition = Math.floor(Math.random() * audioFiles.length)
-	pieceLabel.innerHTML = audioNames[randomPosition]
-	var randomPiece = audioFiles[randomPosition]
+	var randomPosition = Math.floor(Math.random() * audioFiles.length);
+	pieceLabel.innerHTML = audioNames[randomPosition];
+	var randomPiece = audioFiles[randomPosition];
+	randomPiece.addEventListener('ended', genNextPiece);
 	//time for the stop button instance!!!!
-	randomPiece.play()
-	console.log(randomPiece)
+	randomPiece.play();
+	console.log(randomPiece);
 
 };
 function genNextPiece() {
-	pauseButton.innerHTML = 'Pause'
+	pauseButton.innerHTML = 'Pause';
 	for(i=0; i<audioFiles.length; i++) {
-		audioFiles[i].pause()
-		audioFiles[i].currentTime = 0
-	}	
-	var randomPosition = Math.floor(Math.random() * audioFiles.length)
-	var nextRandomPiece = audioFiles[randomPosition]
-	nextRandomPiece.play()
-	pieceLabel.innerHTML = audioNames[randomPosition]
-	console.log(nextRandomPiece)
-}
+		audioFiles[i].pause();
+		audioFiles[i].currentTime = 0;
+	};
+	var randomPosition = Math.floor(Math.random() * audioFiles.length);
+	var nextRandomPiece = audioFiles[randomPosition];
+	nextRandomPiece.addEventListener('ended', genNextPiece);
+	nextRandomPiece.play();
+	pieceLabel.innerHTML = audioNames[randomPosition];
+	console.log(nextRandomPiece);
+};
 function openAtt() {
-	beatStart.play()
-	window.open('attributions.html')
-}
+	beatStart.play();
+	window.open('attributions.html');
+};
 function openHelp() {
-	beatStart.play()
-	window.open('help.html')
-}
+	beatStart.play();
+	window.open('help.html');
+};
 pieceNamePlate.addEventListener('click', randomize);
 titleNamePlate.addEventListener('click', openAtt);
 helpButton.addEventListener('click', openHelp);
 pauseButton.addEventListener('click', pausePiece);
-for(i=0; i<audioFiles.length; i++) {
-	audioFiles[i].addEventListener('ended', genNextPiece)
 
-};
 if(isMobile.any() ) {
-	loadingDiv.classList.add('loading-finished')
-	console.log('loading procedure: mobile')
-}
-else{
-	console.log("loading procedure: normal")
+	loadingDiv.classList.add('loading-finished');
+	console.log('loading procedure: mobile');
+} else {
+	console.log("loading procedure: normal");
 };
 
 
 
 //cookie///////////////////
 window.addEventListener('load', function() {
-	loadingDiv.classList.add('loading-finished')
+	loadingDiv.classList.add('loading-finished');
 
 	
 	var visit = getCookie("cookie");
     if (visit == null) {
 		if(isMobile.any() ) {
-			loadingDiv.classList.add('loading-finished')
-			console.log('No alert')
+			loadingDiv.classList.add('loading-finished');
+			console.log('No alert');
 		}
 		else{
-			alert("Welcome to Con Fuoko!\nMiddle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => pause \n")
-			console.log("normal alert")
+			alert("Welcome to Con Fuoko!\nMiddle button (Begin) => Genrate random piece (if piece ends, a random piece will be generated without you needing to click)\nTop button (Con Fuoko) => attributions\nLower button (Guide) => instructions and help\nSpacebar => pause \n");
+			console.log("normal alert");
 		};
         var expire = new Date();
         expire = new Date(expire.getTime() + 7776000000);
         document.cookie = "cookie=here; expires=" + expire;
-    }
+    };
 });
 function getCookie(c_name) {
     var c_value = document.cookie;
@@ -330,6 +316,6 @@ function getCookie(c_name) {
 
 //universal console testing
 
-console.log(audioFiles.length)
-console.log(audioNames.length)
+console.log(audioFiles.length);
+console.log(audioNames.length);
 
