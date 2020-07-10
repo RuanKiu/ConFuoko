@@ -1,5 +1,6 @@
 # Confuoco
 Repository for Con Fuoco - Copyright 2020 RuanKiu
 
-This is a website I made for music to listen to while working or studying 
+Music streaming WebApp made in 2020 as part of RuanKiu's 'music tools' series
+
 
